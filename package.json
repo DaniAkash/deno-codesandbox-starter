@@ -7,11 +7,12 @@
     "deno-install": "curl -fsSL https://deno.land/x/install/install.sh | sh && export DENO_INSTALL=\"~/.local\" &&  export PATH=\"$DENO_INSTALL/bin:$PATH\"",
     "set-up-types": "rm -rf ./deno-types && mkdir ./deno-types && ~/.local/bin/deno types >> ./deno-types/lib.deno_runtime.d.ts",
     "deno": "~/.local/bin/deno --allow-net ./src/index.ts --reload",
-    "start": "npm run deno-install && npm run set-up-types && watch \"npm run deno\" ./src"
+    "watch-file-changes": "nodemon -w ./src --exec \"npm run deno\" -e \"js ts json mjs\"",
+    "start": "npm run deno-install && npm run set-up-types && npm run watch-file-changes"
   },
   "dependencies": {},
   "devDependencies": {
-    "watch": "^1.0.2"
+    "nodemon": "^2.0.2"
   },
   "keywords": []
 }

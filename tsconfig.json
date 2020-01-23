@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "target": "esnext",
+    "typeRoots": ["./deno-types"]
+  },
+  "include": ["./**/*.ts"]
+}
