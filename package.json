@@ -4,11 +4,14 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js localhost 8080"
+    "deno-install": "curl -fsSL https://deno.land/x/install/install.sh | sh && export DENO_INSTALL=\"~/.local\" &&  export PATH=\"$DENO_INSTALL/bin:$PATH\"",
+    "set-up-types": "rm -rf ./deno-types && mkdir ./deno-types && ~/.local/bin/deno types >> ./deno-types/lib.deno_runtime.d.ts",
+    "deno": "~/.local/bin/deno --allow-net ./src/index.ts --reload",
+    "start": "npm run deno-install && npm run set-up-types && watch \"npm run deno\" ./src"
   },
   "dependencies": {},
   "devDependencies": {
-    "nodemon": "1.18.4"
+    "watch": "^1.0.2"
   },
   "keywords": []
 }
