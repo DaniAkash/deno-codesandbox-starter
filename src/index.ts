@@ -1,9 +1,16 @@
-import { abc } from "https://deno.land/x/abc/mod.ts";
+/**
+ * CodeSandbox Template for your Deno Projects
+ * Updated to support Deno 1.0.0
+ *
+ * Reach out to me @dani_akash_ on Twitter if you run into any issues ✌️
+ */
 
-const app = abc();
+import { serve } from "https://deno.land/std@0.50.0/http/server.ts";
 
-app
-  .get("/", c => {
-    return "Welcome to Deno Starter!";
-  })
-  .start({ port: 8080 });
+const s = serve({ port: 8080 });
+
+console.log("http://localhost:8080/");
+
+for await (const req of s) {
+  req.respond({ body: "Welcome to Deno!\n" });
+}
