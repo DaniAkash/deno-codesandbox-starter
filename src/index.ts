@@ -5,7 +5,7 @@
  * Reach out to me @dani_akash_ on Twitter if you run into any issues ✌️
  */
 
-import { serve } from "https://deno.land/std@0.50.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.91.0/http/server.ts";
 
 const s = serve({ port: 8080 });
 
